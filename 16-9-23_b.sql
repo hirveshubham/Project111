@@ -1,0 +1,37 @@
+use cdac;
+select concat('this',' ','is',' ','a',' ','class',' ','for',' ','employee');
+desc employees;
+select first_name,last_name,concat(first_name,' ',last_name)  name from employees;
+select *,concat(first_name,'is under',manager_id) combine from employees;
+select substr('helloworld',1,5),substr('helloworld',-6);
+select *,substr(email,3) from employees;
+
+select substring_index('www.abc.com','.',-1);
+select substring_index('abc@123@asdr','@',2);
+select *,substring_index(email,'@',1) from employees;
+select instr('helloworld','l');
+select *, instr(last_name,'a') from employees;
+select lpad('helloworld',15,'*'),rpad('helloworld',15,'*');
+select phone_number,rpad(phone_number,20,'#') from employees;
+select lpad(rpad('hello',10,'$'),15,'$');
+select rpad('hello',10,'$');
+select concat(rpad(substr('hello',1,2),5,'*'),substr('hello',-3,3));
+select length('helloworld');
+select first_name,length(first_name) from employees;
+select trim('h' from 'helloworld'),trim('d' from 'helloworld');
+select concat(trim('o' from substr('helloworld',1,5)),substr('helloworld',-5,5));
+select  replace('helloworld','hello','abcd');
+select repeat('hello',2);
+select reverse('hello');
+select abs(-90),abs(90);
+select reverse('hello');
+select ceil(89.1),floor(89.1);
+select greatest(12,34,56,78),least(12,34,56,78);
+select salary,department_id,manager_id from employees;
+select greatest(salary,department_id,manager_id),least(salary,department_id,manager_id) from employees;
+select mod(368,3);
+select salary,mod(salary,6) from employees;
+select power(3,23);
+select round(45.65,1),truncate(45.67,1),round(45.67,0),truncate(45.67,0);
+select round(47.67,-1),truncate(44.67,-1); 
+/* round example */
